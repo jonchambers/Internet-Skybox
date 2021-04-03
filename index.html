@@ -48,22 +48,9 @@ jon chambers - 2021
     box-shadow: 0 0 900px 1px rgb(214, 0, 255);
   }
 
-  /* styles for the clock div */
-  #timeTxt{
-    position: absolute;
-    z-index: 3;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 </style>
 </head>
 <body id="mainBody" >
-
-<!-- if you want a clock, this is the div that'll display it.
-to avtivate it, uncomment the JS script below -->
-<div id="timeTxt"></div>
 
 <!-- the div that changes color throughout the day -->
 <div id="daycolor"></div>
@@ -83,26 +70,6 @@ function startTime() {
 
   //hour, minute and second variables
   let h=today.getHours();
-  let m=today.getMinutes();
-  let s=today.getSeconds();
-
-
-  function checkTime(i) {
-    if (i<10) {i = "0" + i}  // add zero in front of numbers < 10
-    return i;
-  }
-  
-  //format the outputs from h,m,s variables
-  //to mimic a clock output. this is
-  //polished up in the checkTime function (above).
-  //you only really need to do this if you want to use
-  //the clock output
-  // h = checkTime(h);
-  // m = checkTime(m);
-  // s = checkTime(s);
-
-  //uncomment below to show a clock in the middle of the page
-  //document.getElementById('timeTxt').innerHTML = h+":"+m+":"+s;
 
   //call startTime() every second to update the current time
   setTimeout(function(){startTime()},1000);
